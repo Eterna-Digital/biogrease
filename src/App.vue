@@ -10,11 +10,13 @@
     >
       <v-toolbar class="hidden-sm-and-down" color="transparent" elevation="0">
         <div class="logo-bg ma-0 pa-0">
+          <a href="#home" class="scrollactive-item">
           <img
             src="./assets/00_logo biogrease nav bar.svg"
             alt="Biogrease"
             class="logo-b"
           />
+          </a>
         </div>
         <v-spacer></v-spacer>
         <v-list class="d-flex link-list">

@@ -1,13 +1,14 @@
 <template>
-  <div class="services-cont" id="servicios">
+  <div class="services-cont" id="servicios"  >
     <v-card
       class="card-ma2 d-flex flex-column"
       elevation="0"
       color="transparent"
       tile
+     
     >
       <h1 class="h1-txt2">Servicios</h1>
-      <p class="txt-card txt-ma22">
+      <p class="txt-card txt-ma22 pad">
         Con la finalidad de ayudar al medio ambiente mediante el uso de
         tecnología para transformar residuos, Biogrease ofrece diferentes
         servicios para el manejo y adecuada disposición de grasas y aceites de
@@ -20,16 +21,17 @@
         class="mt-cont d-flex flex-column"
         color="transparent"
         elevation="0"
+        
       >
-        <h1 class="h1-txt">OBTENIENDO<br />LA MATERIA PRIMA</h1>
-        <div class="proveedores d-flex">
+        <h1 class="h1-txt" data-aos="fade-up">OBTENIENDO<br />LA MATERIA PRIMA</h1>
+        <div class="proveedores d-flex" data-aos="fade-up">
           <p class="txt-card-g mr-3">Proveedores de</p>
           <p class="green1 mr-3">BIOGREASE</p>
           <p class="green2">
             Empresas de recogida de residuos y su trazabilidad
           </p>
         </div>
-        <div class="mini-cards-cont">
+        <div class="mini-cards-cont" data-aos="fade-up" data-aos-delay="400">
           <v-card
             class="mini-cards d-flex"
             v-for="card in cards"
@@ -51,6 +53,7 @@
 </template>
 
 <script>
+import AOS from 'aos'
 import ServicesCards from "../components/ServicesCards.vue";
 
 export default {
@@ -71,6 +74,12 @@ export default {
       },
     ],
   }),
+    mounted() {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-quad"
+    });
+  }
 };
 </script>
 
@@ -135,7 +144,14 @@ export default {
   font-family: "Lato", sans-serif;
   font-size: 0.8rem;
   text-align: justify;
-  /* background-color: red; */
   width: 80%;
+}
+@media only screen and (max-width: 640px) {
+  .services-cont {
+    margin-top: 20%;
+  }
+  .pad {
+    padding: 0 2rem;
+  }
 }
 </style>

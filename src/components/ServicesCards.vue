@@ -1,18 +1,21 @@
 <template>
   <div class="services-card-cont">
-    <v-card class="card1">
+    <v-card class="card1" data-aos="fade-left" data-aos-delay="300">
       <div class="img-cont">
         <v-img
           src="../assets/img_06_servicios-constancia.png"
           alt="constancia"
         />
       </div>
-      <div class="icon-cont">
-        <v-img
-          src="../assets/icon 07_servicios constancia.svg"
-          alt="icon-constancia"
-        />
+      <div class="icon-container">
+        <div class="icon-cont">
+          <v-img
+            src="../assets/icon 07_servicios constancia.svg"
+            alt="icon-constancia"
+          />
+        </div>
       </div>
+
       <div class="txt-card1 d-flex flex-column align-start">
         <p class="title-s">SERVICIOS</p>
         <p class="h2-s">Constancia de Recolección</p>
@@ -25,7 +28,7 @@
         </p>
       </div>
     </v-card>
-    <v-card class="card1">
+    <v-card class="card1" data-aos="fade-right" data-aos-delay="400">
       <div class="txt-card1 d-flex flex-column align-start">
         <p class="title-s">SERVICIOS</p>
         <p class="h2-s">Planta de tratamiento</p>
@@ -36,17 +39,19 @@
           a este material que anteriormente era un factor contamínate.
         </p>
       </div>
-      <div class="icon-cont">
-        <v-img
-          src="../assets/icon 09_servicios planta.svg"
-          alt="icon-constancia"
-        />
+      <div class="icon-container">
+        <div class="icon-cont">
+          <v-img
+            src="../assets/icon 09_servicios planta.svg"
+            alt="icon-constancia"
+          />
+        </div>
       </div>
       <div class="img-cont">
         <v-img src="../assets/img_08_servicios-planta.png" alt="constancia" />
       </div>
     </v-card>
-    <v-card class="card1">
+    <v-card class="card1" data-aos="fade-left" data-aos-delay="300">
       <div class="certificacion">
         <v-img
           src="../assets/img_11_servicios certifucacion.png"
@@ -59,11 +64,13 @@
           alt="constancia"
         />
       </div>
-      <div class="icon-cont">
-        <v-img
-          src="../assets/icon_12_servicios certificacion.svg"
-          alt="icon-constancia"
-        />
+      <div class="icon-container">
+        <div class="icon-cont">
+          <v-img
+            src="../assets/icon_12_servicios certificacion.svg"
+            alt="icon-constancia"
+          />
+        </div>
       </div>
       <div class="txt-card1 d-flex flex-column align-start">
         <p class="title-s">SERVICIOS</p>
@@ -86,7 +93,16 @@
 </template>
 
 <script>
-export default {};
+import AOS from 'aos'
+export default {
+    mounted() {
+    AOS.init({
+      duration: 800,
+      easing: "ease-out-quad",
+      anchorPlacement: 'top-center',
+    });
+  }
+};
 </script>
 
 <style>
@@ -106,15 +122,20 @@ export default {};
   margin-bottom: 2%;
 }
 .img-cont {
-  width: 480px;
+  width: 50%;
+}
+.icon-container {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
 }
 .icon-cont {
   width: 75px;
-  position: absolute;
-  margin-left: 46%;
   z-index: 10;
 }
 .txt-card1 {
+  width: 50%;
   padding: 1.2rem 5rem 1.2rem 5rem;
 }
 .title-s {
@@ -145,5 +166,21 @@ export default {};
   z-index: 10;
   margin-left: 5%;
   margin-top: 40%;
+}
+@media only screen and (max-width: 640px) {
+  .card1 {
+    width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10%;
+  }
+  .img-cont {
+    width: 100%;
+  }
+  .icon-cont {
+    width: 16%;
+    margin-top: -80%;
+    margin-left: 0%;
+  }
 }
 </style>

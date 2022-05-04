@@ -1,7 +1,11 @@
 <template>
-  <div id="como_funciona" class="d-flex flex-column align-center">
+  <div
+    id="como_funciona"
+    class="d-flex flex-column align-center"
+    
+  >
     <h1 class="h1-txt">COMO FUNCIONA BIOGREASE</h1>
-    <v-card class="func-container d-flex" elevation="0" color="transparent">
+    <v-card class="func-container d-flex" elevation="0" color="transparent" data-aos="fade-up">
       <div class="func-1">
         <v-img src="../assets/img_15_como funciona.png" alt="como funciona" />
       </div>
@@ -21,7 +25,7 @@
     </v-card>
     <div class="info-2p">
       <v-card class="info2-cardp" color="transparent" elevation="0">
-        <div class="sec1">
+        <div class="sec1" data-aos="fade-right">
           <h1 class="h1-txt">
             EL PANORAMA<br />
             MUNDIAL
@@ -34,16 +38,16 @@
             este, ademas de crear una economía circular.
           </p>
         </div>
-        <div class="sec-2img">
+        <div class="sec-2img" data-aos="fade-right" data-aos-delay="300">
           <v-img src="../assets/logo_17_biogrease.svg" alt="logo-bio" />
         </div>
       </v-card>
       <div class="sec2">
         <v-card class="sec2c" elevation="0" color="transparent">
-          <div class="sec2-img">
+          <div class="sec2-img" data-aos="fade-right" data-aos-delay="300">
             <v-img src="../assets/img_18_nuestro compromiso.png" />
           </div>
-          <div class="sec2-tx">
+          <div class="sec2-tx" data-aos="fade-left" data-aos-delay="300">
             <h1 class="h1-txt">NUESTRO COMPROMISO</h1>
             <p class="txt-card-s mt-5">
               La demanda de biocombustibles se ha incrementado en los últimos
@@ -67,7 +71,16 @@
 </template>
 
 <script>
-export default {};
+// import AOS from "aos";
+export default {
+  // mounted() {
+  //   AOS.init({
+  //     duration: 800,
+  //     easing: "ease-out-quad",
+  //     anchorPlacement: "top",
+  //   });
+  // },
+};
 </script>
 
 <style>
@@ -146,7 +159,7 @@ export default {};
 .sec2c {
   display: flex;
 }
-.contact-tx{
-margin-top: 10%;
+.contact-tx {
+  margin-top: 10%;
 }
 </style>

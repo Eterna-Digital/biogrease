@@ -1,10 +1,10 @@
 <template>
   <div class="medio-a-cont" id="medio_ambiente">
     <v-card class="card-ma d-flex" color="transparent" elevation="0">
-      <div class="img-ma">
+      <div class="img-ma" data-aos="fade-right">
         <v-img src="../assets/img_03_ambiente.png" alt="ambiente" />
       </div>
-      <div class="txt-ma3 d-flex flex-column">
+      <div class="txt-ma3 d-flex flex-column" data-aos="fade-left">
         <h1 class="h1-txt">
           COMPROMISO CON<br />
           EL MEDIO AMBIENTE
@@ -24,28 +24,47 @@
         </p>
       </div>
     </v-card>
-    <div class="medio-a-cont-2">
-      <v-card class="card-ma2 d-flex flex-column" elevation="0" color="transparent">
+    <div class="medio-a-cont-2" data-aos="fade-up">
+      <v-card
+        class="card-ma2 d-flex flex-column"
+        elevation="0"
+        color="transparent"
+        
+      >
         <div class="icon-ma">
-          <v-img
-            src="../assets/icon_05_medidas.svg"
-            alt="medidas-icon"
-            
-          />
+          <v-img src="../assets/icon_05_medidas.svg" alt="medidas-icon" />
         </div>
-          <h1 class="h1-txt2">Medidas sustentables</h1>
-          <p class="txt-card txt-ma22">
-            Se requiere de una buena separación y manejo integral de las grasas
-            y aceites de origen animal y/o vegetal residuales, con el objeto de
-            implementar medidas sustentables de manejo, siendo necesaria para
-            este fin la participación de los distintos sectores involucrados en
-            la generación, control, recuperación y comercialización de dichos
-            residuos.
-          </p>
+        <h1 class="h1-txt2">Medidas sustentables</h1>
+        <p class="txt-card txt-ma22">
+          Se requiere de una buena separación y manejo integral de las grasas y
+          aceites de origen animal y/o vegetal residuales, con el objeto de
+          implementar medidas sustentables de manejo, siendo necesaria para este
+          fin la participación de los distintos sectores involucrados en la
+          generación, control, recuperación y comercialización de dichos
+          residuos.
+        </p>
       </v-card>
     </div>
   </div>
 </template>
+
+<script>
+import AOS from "aos";
+import "aos/dist/aos.css"
+
+export default {
+  mounted() {
+   AOS.init({
+      disable: "phone",
+      duration: '1000',
+      once: true,
+      mirror: false,
+      easing: 'ease',
+      anchorPlacement: 'top',
+    })
+  },
+};
+</script>
 
 <style>
 .medio-a-cont {
@@ -57,9 +76,8 @@
   display: flex;
   flex-direction: column;
 }
-.card-ma{
+.card-ma {
   padding-left: 5%;
-
 }
 .img-ma {
   width: 45%;
@@ -71,45 +89,65 @@
   width: 65%;
 }
 
-.medio-a-cont-2{
+.medio-a-cont-2 {
   width: 100vw;
   display: flex;
   justify-content: center;
- background-color: #eaeaea;
- padding: 4rem;
- margin-top: 5%;
+  background-color: #eaeaea;
+  padding: 4rem;
+  margin-top: 5%;
 }
-.card-ma2{
+.card-ma2 {
   width: 65%;
   align-items: center !important;
 }
-.icon-ma{
+.icon-ma {
   width: 80px;
   margin-bottom: 2rem;
 }
-.h1-txt2{
+.h1-txt2 {
   font-family: "Lato", sans-serif;
   text-align: justify;
   font-size: 2.5rem;
   font-weight: lighter;
   letter-spacing: 5px;
 }
-.txt-ma22{
+.txt-ma22 {
   text-align: center;
   align-items: center !important;
 }
 @media only screen and (max-width: 640px) {
-.card-ma{
-  flex-direction: column-reverse;
-  padding-left: 0%;
-  padding: 2rem;
-
-}
-.ma-txt {
-  width: 100%;
-}
-.img-ma {
-  width: 100%;
-}
+  .medio-a-cont {
+    width: 100vw;
+    background-image: url("../assets/img_04_ambiente back.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 0%;
+  }
+  .card-ma {
+    flex-direction: column-reverse;
+    padding-left: 0%;
+    padding: 2rem;
+  }
+  .ma-txt {
+    width: 100%;
+  }
+  .img-ma {
+    margin-top: 10%;
+    width: 100%;
+  }
+  .medio-a-cont-2 {
+    padding: 2rem;
+  }
+  .card-ma2 {
+    width: 100%;
+  }
+  .h1-txt2 {
+    text-align: center;
+    font-size: 24px;
+  }
+  .txt-ma22 {
+    text-align: justify;
+  }
 }
 </style>

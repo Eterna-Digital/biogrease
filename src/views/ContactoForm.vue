@@ -1,21 +1,25 @@
 <template>
   <div class="contacto-cont">
-    <v-card class="card-contacto" elevation="0" color="transparent">
+    <v-card class="card-contacto" tile elevation="0" color="transparent">
       <div class="info-contacto d-flex flex-column">
-        <p class="txt-card-s mb-5 pl-2 ">
-          Dirección : IMPACT, Chaussée de Vleurgat 195,<br />
-          1050 Ixelles<br />
-          Tél. Oficina : +32 484 26 26 26<br />
+        <p class="txt-card-s mb-5 pl-2">
+          Dirección : Bosque de Ciruelos 190 <br />Despacho 201-A <br />Bosques
+          de las Lomas Miguel Hidalgo,<br />
+          CDMX. <br />Tel. oficina : (55) 43 17 39 16<br />
           Mail : info@biogrease.org
         </p>
-        <div class="ma-0 pa-0">
-          <v-btn small icon><v-icon small color="#262626">mdi-facebook</v-icon></v-btn>
+        <!-- <div class="ma-0 pa-0">
+          <v-btn small icon
+            ><v-icon small color="#262626">mdi-facebook</v-icon></v-btn
+          >
           <v-btn text class="text-capitalize">Facebook</v-btn>
-        </div>
-        <div>
-          <v-btn small icon><v-icon small color="#262626">mdi-twitter</v-icon></v-btn>
+        </div> -->
+        <!-- <div>
+          <v-btn small icon
+            ><v-icon small color="#262626">mdi-twitter</v-icon></v-btn
+          >
           <v-btn text class="text-capitalize">Twitter</v-btn>
-        </div>
+        </div> -->
       </div>
       <div class="form d-flex flex-column">
         <v-text-field
@@ -43,11 +47,11 @@
         ></v-textarea>
         <div class="btn-e d-flex">
           <v-btn
-          color="#01B980"
-          class="pl-6 pr-6 mt-5 white--text font-weight-light contact caption"
-          elevation="0"
-          >ENVIAR</v-btn
-        >
+            color="#01B980"
+            class="pl-6 pr-6 mt-5 white--text font-weight-light contact caption"
+            elevation="0"
+            >ENVIAR</v-btn
+          >
         </div>
       </div>
     </v-card>
@@ -71,14 +75,14 @@ export default {};
   display: flex;
   justify-content: center;
 }
-.info-contacto{
+.info-contacto {
   margin-top: 1.5rem;
   margin-right: 10%;
 }
-.form{
+.form {
   width: 35%;
 }
-.btn-e{
+.btn-e {
   justify-content: center;
 }
 </style>

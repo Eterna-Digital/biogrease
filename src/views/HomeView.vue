@@ -1,5 +1,5 @@
 <template>
-  <div class="home-sec">
+  <div class="home-sec" id="home">
     <v-card
       class="d-flex flex-column justify-center card-home"
       color="transparent"
@@ -16,7 +16,7 @@
         BioGrease, es una alternativa viable y sustentable para el desecho
         correcto de las grasas animales y vegetales.
       </h1>
-      <v-card-actions class="social-cont">
+      <!-- <v-card-actions class="social-cont">
         <v-btn
           color="#01B980"
           class="pl-6 pr-6 white--text font-weight-light contact caption"
@@ -26,10 +26,15 @@
         <v-btn icon><v-icon color="#286C57">mdi-facebook</v-icon></v-btn>
         <v-btn icon><v-icon color="#286C57">mdi-twitter</v-icon></v-btn>
         <v-btn icon><v-icon color="#286C57">mdi-vimeo</v-icon></v-btn>
-      </v-card-actions>
+      </v-card-actions> -->
     </v-card>
     <div class="cont-card-2">
-      <v-card class="d-flex card-2" elevation="0">
+      <v-card
+        class="d-flex card-2"
+        elevation="0"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
         <div class="d-flex flex-column card-h2">
           <h1 class="h1-txt">DESAFÍO DE <br />LA INDUSTRIA</h1>
           <p class="txt-card">
@@ -52,6 +57,17 @@
     </div>
   </div>
 </template>
+
+<script>
+import AOS from "aos";
+export default {
+  mounted() {
+    AOS.init({
+      duration: 500,
+    });
+  },
+};
+</script>
 
 <style>
 .home-sec {
