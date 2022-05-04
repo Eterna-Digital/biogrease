@@ -6,7 +6,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 # etapa de producción
-FROM nginx:1.17.10-alpine as production-stage
+FROM nginx:1.17.10-alpine
 RUN mkdir /app
 # Copy static assets from builder stage
 COPY --from=build-stage /app/dist /app
