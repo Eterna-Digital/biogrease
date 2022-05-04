@@ -1,6 +1,13 @@
 <template>
   <v-app>
-    <v-app-bar app color="#EFEFED" hide-on-scroll>
+    <scrollactive class="my-nav">
+    <v-app-bar
+      app
+      color="#EFEFED"
+      hide-on-scroll
+      elevation="0"
+      style="z-index: 100"
+    >
       <v-toolbar class="hidden-sm-and-down" color="transparent" elevation="0">
         <div class="logo-bg ma-0 pa-0">
           <img
@@ -16,7 +23,7 @@
               :href="link.link"
               v-for="link in links"
               :key="link.id"
-              class="text-uppercase caption link ma-0"
+              class="text-uppercase caption link ma-0 scrollactive-item"
               >{{ link.title }}</a
             >
           </v-list-item>
@@ -43,41 +50,44 @@
           <v-list dense>
             <v-list-item-group
               v-model="group"
+              class="mobile-group"
               active-class="deep-purple--text text--accent-4"
             >
-              <v-list-item>
-                <v-list-item-icon>
-                  <v-icon>mdi-home</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Home</v-list-item-title>
-              </v-list-item>
-
-              <v-list-item>
-                <v-list-item-icon>
-                  <v-icon>mdi-account</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title>Account</v-list-item-title>
-              </v-list-item>
+        <div class="logo-bg-mb ma-0 pa-0">
+          <img
+            src="./assets/00_logo biogrease nav bar.svg"
+            alt="Biogrease"
+            class="logo-mb"
+          />
+        </div>
+              <v-list-item class="link-item-mobile">
+            <a
+              :href="link.link"
+              v-for="link in links"
+              :key="link.id"
+              class="link-item-mobile text-uppercase link-m ma-0 scrollactive-item"
+              >{{ link.title }}</a
+            >
+          </v-list-item>
             </v-list-item-group>
           </v-list>
         </v-navigation-drawer>
       </div>
     </v-app-bar>
+    </scrollactive>
     <v-main>
-      <HelloWorld />
+      <router-view></router-view>
     </v-main>
+    <FooterContainer/>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-
+import FooterContainer from "./views/FooterContainer.vue"
 export default {
   name: "App",
 
-  components: {
-    HelloWorld,
-  },
+  components: {FooterContainer},
 
   data: () => ({
     drawer: false,
@@ -93,14 +103,37 @@ export default {
 </script>
 
 <style scoped>
+* {
+  background-color: #f1f1f1;
+}
 .logo-b {
   width: 230px;
+}
+.logo-bg-mb{
+  width: 90%;
+  margin-top: 40% !important;
+}
+.logo-mb{
+  width: 200px;
 }
 .link-list {
   background-color: transparent !important;
 }
 .link-item {
   height: 100%;
+}
+.mobile-group{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.link-item-mobile{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start !important;
 }
 .link {
   text-decoration: none;
@@ -110,7 +143,18 @@ export default {
   border-right: 1.5px solid rgb(0, 0, 0);
   color: rgb(0, 0, 0);
 }
-.link:hover {
+.link-m{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+  padding: 0 1rem 0 1rem;
+  color: #262626;
+  margin-bottom: 2rem !important;
+}
+.link:hover,
+.link-m:hover {
   color: #01b980;
   font-weight: bolder;
 }
