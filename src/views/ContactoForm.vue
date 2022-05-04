@@ -6,7 +6,7 @@
           Dirección : IMPACT, Chaussée de Vleurgat 195,<br />
           1050 Ixelles<br />
           Tél. Oficina : +32 484 26 26 26<br />
-          Mail : info@biogrease.org
+          Mail : info@biogrease.mx
         </p>
         <div class="ma-0 pa-0">
           <v-btn small icon><v-icon small color="#262626">mdi-facebook</v-icon></v-btn>
