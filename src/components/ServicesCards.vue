@@ -39,6 +39,9 @@
           a este material que anteriormente era un factor contamínate.
         </p>
       </div>
+      <!-- <div class="cont-icon"> -->
+
+
       <div class="icon-container">
         <div class="icon-cont">
           <v-img
@@ -46,7 +49,8 @@
             alt="icon-constancia"
           />
         </div>
-      </div>
+      <!-- </div> -->
+            </div>
       <div class="img-cont">
         <v-img src="../assets/img_08_servicios-planta.png" alt="constancia" />
       </div>
@@ -93,15 +97,15 @@
 </template>
 
 <script>
-import AOS from 'aos'
+import AOS from "aos";
 export default {
-    mounted() {
+  mounted() {
     AOS.init({
       duration: 800,
       easing: "ease-out-quad",
-      anchorPlacement: 'top-center',
+      anchorPlacement: "top-center",
     });
-  }
+  },
 };
 </script>
 
@@ -170,6 +174,7 @@ export default {
 @media only screen and (max-width: 640px) {
   .card1 {
     width: 90%;
+    /* height: 30rem; */
     flex-direction: column;
     justify-content: center;
     margin-bottom: 10%;
@@ -177,10 +182,32 @@ export default {
   .img-cont {
     width: 100%;
   }
+  .icon-container{
+    border: 2px solid gold;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
   .icon-cont {
+    border: 2px solid red;
     width: 16%;
-    margin-top: -80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 0%;
     margin-left: 0%;
   }
+  .txt-card1 {
+    width: 100%;
+    padding: 1.2rem 1rem 1.2rem 1rem;
+  }
+.certificacion {
+  position: absolute;
+  width: 100px;
+  z-index: 10;
+  margin-left: 45%;
+  margin-top: -60%;
+  /* border: 2px solid red; */
+}
 }
 </style>
