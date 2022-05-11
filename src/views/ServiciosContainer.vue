@@ -1,11 +1,10 @@
 <template>
-  <div class="services-cont" id="servicios"  >
+  <div class="services-cont" id="servicios">
     <v-card
       class="card-ma2 d-flex flex-column"
       elevation="0"
       color="transparent"
       tile
-     
     >
       <h1 class="h1-txt2">Servicios</h1>
       <p class="txt-card txt-ma22 pad">
@@ -21,12 +20,15 @@
         class="mt-cont d-flex flex-column"
         color="transparent"
         elevation="0"
-        
       >
-        <h1 class="h1-txt" data-aos="fade-up">OBTENIENDO<br />LA MATERIA PRIMA</h1>
+        <h1 class="h1-txt" data-aos="fade-up">
+          OBTENIENDO<br />LA MATERIA PRIMA
+        </h1>
         <div class="proveedores d-flex" data-aos="fade-up">
-          <p class="txt-card-g mr-3">Proveedores de</p>
-          <p class="green1 mr-3">BIOGREASE</p>
+          <div class="sub1 d-flex">
+            <p class="txt-card-g mr-3">Proveedores de</p>
+            <p class="green1 mr-3">BIOGREASE</p>
+          </div>
           <p class="green2">
             Empresas de recogida de residuos y su trazabilidad
           </p>
@@ -53,12 +55,13 @@
 </template>
 
 <script>
-import AOS from 'aos'
+import AOS from "aos";
 import ServicesCards from "../components/ServicesCards.vue";
 
 export default {
   components: { ServicesCards },
   data: () => ({
+    model: 0,
     cards: [
       {
         src: require("../assets/img_12_materia prima.png"),
@@ -74,12 +77,12 @@ export default {
       },
     ],
   }),
-    mounted() {
+  mounted() {
     AOS.init({
       duration: 800,
-      easing: "ease-out-quad"
+      easing: "ease-out-quad",
     });
-  }
+  },
 };
 </script>
 
@@ -104,6 +107,7 @@ export default {
   width: 75%;
 }
 .proveedores {
+  flex-direction: row !important;
   align-items: center !important;
   justify-content: flex-end;
   font-family: "Lato", sans-serif;
@@ -147,11 +151,29 @@ export default {
   width: 80%;
 }
 @media only screen and (max-width: 640px) {
+
   .services-cont {
     margin-top: 20%;
   }
   .pad {
     padding: 0 2rem;
   }
+  .proveedores {
+    width: 100%;
+    flex-direction: column !important;
+  }
+  .mini-txt {
+    margin-top: 0rem;
+  }
+  .mini-cards-cont {
+    flex-direction: column;
+    margin-top: 15%;
+  }
+  .mini-txt {
+    margin-bottom: 2rem;
+  }
+  /* .carousel {
+    margin-top: 5%;
+  } */
 }
 </style>

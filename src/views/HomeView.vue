@@ -140,6 +140,7 @@ export default {
   .home-sec {
     height: 160vh;
     margin-bottom: 0%;
+    background-image: url("../assets/mobile/01_back mobile sec 1.png");
   }
   .home-sec {
     background-position: 0 0%;

@@ -1,13 +1,37 @@
 <template>
-  <div
-    id="como_funciona"
-    class="d-flex flex-column align-center"
-    
-  >
-    <h1 class="h1-txt">COMO FUNCIONA BIOGREASE</h1>
-    <v-card class="func-container d-flex" elevation="0" color="transparent" data-aos="fade-up">
-      <div class="func-1">
+  <div id="como_funciona" class="d-flex flex-column align-center">
+    <h1 class="h1-txt h1-cf">COMO FUNCIONA BIOGREASE</h1>
+    <v-card
+      class="func-container d-flex"
+      elevation="0"
+      color="transparent"
+      data-aos="fade-up"
+    >
+      <div class="func-1 d-none d-sm-flex">
         <v-img src="../assets/img_15_como funciona.png" alt="como funciona" />
+      </div>
+      <div class="carousel d-flex d-sm-none">
+        <v-carousel v-model="model" height="400">
+          <template v-slot:prev="{ on, attrs }">
+            <v-btn color="#286C57" v-bind="attrs" v-on="on" small icon
+              ><v-icon>mdi-chevron-left</v-icon></v-btn
+            >
+          </template>
+          <template v-slot:next="{ on, attrs }">
+            <v-btn color="#286C57" v-bind="attrs" v-on="on" small icon
+              ><v-icon>mdi-chevron-right</v-icon></v-btn
+            >
+          </template>
+          <v-carousel-item v-for="card in cards2" :key="card.id">
+            <v-sheet :card="card" height="100%" tile>
+              <v-row class="fill-height" align="center" justify="center">
+                <div class="mini-img-mobile">
+                  <v-img :src="card.src" />
+                </div>
+              </v-row>
+            </v-sheet>
+          </v-carousel-item>
+        </v-carousel>
       </div>
     </v-card>
     <v-card class="proces-card" elevation="0">
@@ -73,13 +97,20 @@
 <script>
 // import AOS from "aos";
 export default {
-  // mounted() {
-  //   AOS.init({
-  //     duration: 800,
-  //     easing: "ease-out-quad",
-  //     anchorPlacement: "top",
-  //   });
-  // },
+  data: () => ({
+    model: 0,
+    cards2: [
+      {
+        src: require("../assets/mobile/08_img como funciona 1.png"),
+      },
+      {
+        src: require("../assets/mobile/08_img como funciona 2.png"),
+      },
+      {
+        src: require("../assets/mobile/08_img como funciona 3.png"),
+      },
+    ],
+  }),
 };
 </script>
 
@@ -161,5 +192,66 @@ export default {
 }
 .contact-tx {
   margin-top: 10%;
+}
+@media only screen and (max-width: 640px) {
+  #como_funciona {
+    margin-top: 15%;
+  }
+  .h1-cf {
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  .proces-card {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    background: linear-gradient(180deg, #f1f1f1 24%, #eaeaea 24%);
+  }
+  .icon-p {
+    width: 65px;
+  }
+  .tx-p {
+    width: 90%;
+    text-align: justify;
+    margin-top: 2rem;
+  }
+  .func-container {
+    width: 80%;
+    margin-bottom: 5%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .info-2p {
+    margin-top: 10%;
+  }
+  .info2-cardp {
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sec1 {
+    width: 100%;
+  }
+  .sec-2img {
+    margin-top: 2rem;
+    width: 200px;
+  }
+  .sec2c {
+    width: 100%;
+    margin-top: 15%;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .sec2-tx {
+    width: 80%;
+    margin-left: 0rem;
+  }
+  .sec-2img {
+    width: 200px;
+  }
+  .sec2-img {
+    width: 50%;
+    margin-top: 5%;
+  }
 }
 </style>
