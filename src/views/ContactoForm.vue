@@ -6,7 +6,7 @@
           Dirección : Bosque de Ciruelos 190 <br />Despacho 201-A <br />Bosques
           de las Lomas Miguel Hidalgo,<br />
           CDMX. <br />Tel. oficina : (55) 43 17 39 16<br />
-          Mail : info@biogrease.org
+          Mail : info@biogrease.mx
         </p>
         <!-- <div class="ma-0 pa-0">
           <v-btn small icon
